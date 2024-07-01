@@ -5,7 +5,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/logo">Login</a>
+                    <a href="/login">Login</a>
                 </li>
         <li class="menu-container">
             <a href="/dashboard">jhon</a>
@@ -17,7 +17,7 @@
         </li>
         <li>
             <a href="/cart-page">Cart
-                <span>3</span>
+                <span *ngIf="cartQuantity">{{cartQuantity}}</span>
             </a>
         </li>
     </ul>
