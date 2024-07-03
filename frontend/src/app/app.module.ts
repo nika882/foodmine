@@ -16,6 +16,7 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import{ToastrModule} from 'ngx-toastr';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RatingModule } from 'ng-starrating';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { RatingModule } from 'ng-starrating';
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    InputContainerComponent
   ],
   imports: [
     BrowserModule,
