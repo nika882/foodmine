@@ -1,76 +1,71 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
+/* General reset and basic styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-}
-
-.container {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+    background-color: #f5f5f5;
 }
 
 .details {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+app-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
     text-align: center;
 }
 
-.app-title {
-    font-size: 1.5rem;
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+text-input {
     margin-bottom: 1rem;
-    color: #333;
 }
 
-.input-container {
-    margin-bottom: 1rem;
-}
-
-.input-container label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-.input-container input {
+text-input input {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
+    font-size: 1rem;
 }
 
-.input-container input:focus {
+text-input input:focus {
     border-color: #007bff;
     outline: none;
 }
 
-.error-list {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
+default-button {
+    display: flex;
+    justify-content: center;
 }
 
-.button {
-    text-align: center;
-}
-
-.button button {
+default-button button {
     background-color: #007bff;
-    color: white;
+    color: #fff;
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 1rem;
+    cursor: pointer;
 }
 
-.button button:hover {
+default-button button:hover {
     background-color: #0056b3;
 }

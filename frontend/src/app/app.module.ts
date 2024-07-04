@@ -16,6 +16,10 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import{ToastrModule} from 'ngx-toastr';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RatingModule } from 'ng-starrating';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component';
+import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
+import { TextInputComponent } from './components/partials/text-input/text-input.component';
+import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,11 @@ import { RatingModule } from 'ng-starrating';
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    InputContainerComponent,
+    InputValidationComponent,
+    TextInputComponent,
+    DefaultButtonComponent
   ],
   imports: [
     BrowserModule,

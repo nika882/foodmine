@@ -83,5 +83,17 @@
     11.add httpclient module
     12.update food service
 12.login page
-   
+14.Connect Login API To MongoDb Atlas
+    1.Moving Apies into routers
+    2.Create MongoDB Atlas
+    3.Create .env file
+    4.Install
+        1.mongoose
+        2.dotenv
+        3.bcryptsJs
+        4.jsonwebtoken
+        5.epress-async-handler
+    5.Connect to MongoDb Atlas
+    6.Use MongoDb instead of data.ts apies
+
        
