@@ -17,10 +17,13 @@ import{ToastrModule} from 'ngx-toastr';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RatingModule } from 'ng-starrating';
 import { InputContainerComponent } from './components/partials/input-container/input-container.component';
+<<<<<<< HEAD
 import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+=======
+>>>>>>> e0f527d15952fafb06f3222abcfaad80ab0f31cb
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,11 +36,15 @@ import { RegisterPageComponent } from './components/pages/register-page/register
     TitleComponent,
     NotFoundComponent,
     LoginPageComponent,
+<<<<<<< HEAD
     InputContainerComponent,
     InputValidationComponent,
     TextInputComponent,
     DefaultButtonComponent,
     RegisterPageComponent
+=======
+    InputContainerComponent
+>>>>>>> e0f527d15952fafb06f3222abcfaad80ab0f31cb
   ],
   imports: [
     BrowserModule,
