@@ -1,24 +1,59 @@
 import { Router } from "express";
 import { sample_users } from "../data";
 import  Jwt from  'jsonwebtoken';
+import asyncHandler from "express-async-handler";
+import { User, UserModel } from "../models/user.model";
+import { HTTP_BAD_REQUEST } from "../constants/http_status";
+import bcrypt from 'bcryptjs'
 const router=Router();
 
 
-router.post("/login", (req, res) => {
-    const { email, password } = req.body;
+router.get("/seed",asyncHandler(async(req,res)=>{
+    const userCount=await UserModel.countDocuments();
+    if(userCount>0){
+    res.send("Seed is already done!");
+    return;
+}
+await UserModel.create(sample_users);
+res.send("Seed is Done");
+}))
 
-    // Find user in sample_users array
-    const user = sample_users.find(user =>
-        user.email === email && user.password === password
-    );
-
-    if (user) {
-        const token = generateTokenResponse(user);
-        res.json({ token }); // Send token as JSON response
-    } else {
-        res.status(400).json({ error: "Username or password is not valid!" });
+router.post("/login", asyncHandler(
+    async(req, res) => {
+        const { email, password } = req.body;
+    
+        // Find user in sample_users array
+        const user =await UserModel.findOne({email,password});
+        if (user) {
+            const token = generateTokenResponse(user);
+            res.json({ token }); // Send token as JSON response
+        } else {
+            res.status(HTTP_BAD_REQUEST).send({ error: "Username or password is not valid!" });
+        }
     }
-});
+));
+
+router.post('/register',asyncHandler(
+    async(req,res)=>{
+        const{name,email,password,address}=req.body;
+        const user=await UserModel.findOne({email});
+        if(user){
+            res.status(HTTP_BAD_REQUEST).send('User is already exist,please login!');
+            return;
+        }
+        const encryptedPassword=await bcrypt.hash(password,10);
+        const newUser:User={
+            id:'',
+            name,
+            email:email.toLoercase(),
+            password:encryptedPassword,
+            address,
+            isAdmin:false
+        }
+        const dbUser=await UserModel.create(newUser);
+        res.send(generateTokenResponse(dbUser));
+    }
+))
 
 const generateTokenResponse = (user: { email: any; isAdmin: any; }) => {
     const token = Jwt.sign({

@@ -95,5 +95,9 @@
         5.epress-async-handler
     5.Connect to MongoDb Atlas
     6.Use MongoDb instead of data.ts apies
-
+15.Register User
+    1.Add Register api
+    2.Add Register service method
+    3.Add Register Link
+    4.Add Register component
        

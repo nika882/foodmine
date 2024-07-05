@@ -51,7 +51,7 @@ export const sample_users:any[]=[
         email:"nika@gmail.com",
         password:"123456",
         address:"georgia geo",
-        isAdmin:false
+        isAdmin:true
     },
     {
         name:"gio toko",
