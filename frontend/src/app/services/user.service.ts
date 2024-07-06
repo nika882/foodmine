@@ -8,7 +8,6 @@ import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
 
 const USER_KEY = 'User';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +18,7 @@ export class UserService {
   constructor(private http: HttpClient, private toastrService: ToastrService) { 
     this.userObservable = this.userSubject.asObservable();
   }
-
+  public get cuurentUser():User{return this.userSubject.value;};
   login(userLogin: IUserLogin): Observable<User> {
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
       tap({
@@ -37,6 +36,7 @@ export class UserService {
       })
     );
   }
+
   register(userRegister:IUserRegister):Observable<User>{
     return this.http.post<User>(USER_REGISTER_URL,userRegister).pipe(
       tap({
@@ -61,7 +61,7 @@ export class UserService {
   logout() {
     this.userSubject.next(new User());
     localStorage.removeItem(USER_KEY);
-    //window.location.reload();
+    window.location.reload();
   }
 
   private setUserToLocalStorage(user: User) {

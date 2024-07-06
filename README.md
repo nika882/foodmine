@@ -100,4 +100,16 @@
     2.Add Register service method
     3.Add Register Link
     4.Add Register component
-       
+16.Loading!
+    1.Add image
+    2.add component
+    3.add service
+    4.add interceptor
+17.chekout page
+    1.create order model
+    2.crete checkout page component
+        1.add to router
+    3.add user to user service
+    4.add cart to cart service
+    5.create order item list component
+    
