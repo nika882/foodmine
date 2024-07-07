@@ -13,6 +13,7 @@ import { Order } from 'src/app/shared/models/Order';
 export class CheckoutPageComponent implements OnInit {
   order:Order=new Order();
   checkoutForm!:FormGroup;
+creatOrder: any;
   constructor(cartService:CartService,
     private formBuilder:FormBuilder,
     private userService:UserService,

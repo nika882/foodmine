@@ -112,4 +112,22 @@
     3.add user to user service
     4.add cart to cart service
     5.create order item list component
-    
+17.Checkpoint page
+    1.create order Model
+    2.create checkpoint page component
+        1.add to router
+    3.add user to user service
+    4.add cart to cart service
+    5.create order item list component
+    6.adding map to the checkout page
+        1.add leaflet npm package
+            1.add @type/leaflet
+            2.add css to angular.json
+        2.add addresslating to order model
+        3.create map component
+            1.add to checkout page
+            2.add ts
+                1.change app-map selector to map
+            3.add html
+            4.add css
+        4.add auth guard
