@@ -5,7 +5,7 @@ import { CartItem } from "./Cartsitem";
 export class Order{
     id!:number;
     item!:CartItem[];
-    toralPrice!:number;
+    totalPrice!:number;
     name!:string;
     address!:string;
     addresLatLng?:LatLng

@@ -131,3 +131,13 @@
             3.add html
             4.add css
         4.add auth guard
+    7.save order
+        1.add order model
+        2.add order status enum
+        3.add auth middleware
+        4.add order router
+            1.add create Api
+        5.add orders Urls to urls.ts
+        6.add order service
+            1.add create method
+        7.add auth interceptor

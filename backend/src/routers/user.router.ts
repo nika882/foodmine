@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { sample_users } from "../data";
-import  Jwt from  'jsonwebtoken';
+import  jwt from  'jsonwebtoken';
 import asyncHandler from "express-async-handler";
 import { User, UserModel } from "../models/user.model";
 import { HTTP_BAD_REQUEST } from "../constants/http_status";
@@ -56,7 +56,7 @@ router.post('/register',asyncHandler(
 ))
 
 const generateTokenResponse = (user: { email: any; isAdmin: any; }) => {
-    const token = Jwt.sign({
+    const token = jwt.sign({
         email: user.email,
         isAdmin: user.isAdmin
     }, "SomeRandomText", {
@@ -64,4 +64,13 @@ const generateTokenResponse = (user: { email: any; isAdmin: any; }) => {
     });
     return token;
 };
+/*const generateTokenResponse=(user:User)=>{
+    const token=jwt.sign({
+        id:user.id,email:user.email,isAdmin:user.isAdmin
+    },process.env.JWT_SECRET!,{
+        expiresIn:"30d"
+    }
+);*/
+
+
 export default router;
