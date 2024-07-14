@@ -23,7 +23,7 @@ export const OrderItemSchema=new Schema<OrderItem>(
 );
 
 export interface Order{
-    id:number;
+    id:string;
     item:OrderItem[];
     totalPrice:number;
     name:string;
@@ -37,6 +37,7 @@ export interface Order{
     updateAt:Date
 }
 const orderSchema=new Schema<Order>({
+    
     name:{type:String,required:true},
     address:{type:String,required:true},
     addresLatLng:{type:LatLngSchema,required:true},

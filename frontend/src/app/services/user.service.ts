@@ -15,10 +15,13 @@ export class UserService {
   private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
   public userObservable: Observable<User>;
 
-  constructor(private http: HttpClient, private toastrService: ToastrService) { 
+  constructor(private http: HttpClient, private toastrService: ToastrService) {
     this.userObservable = this.userSubject.asObservable();
   }
-  public get cuurentUser():User{return this.userSubject.value;};
+  public get cuurentUser(): User { 
+    return this.userSubject.value;
+   };
+   
   login(userLogin: IUserLogin): Observable<User> {
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
       tap({
@@ -37,10 +40,10 @@ export class UserService {
     );
   }
 
-  register(userRegister:IUserRegister):Observable<User>{
-    return this.http.post<User>(USER_REGISTER_URL,userRegister).pipe(
+  register(userRegister: IUserRegister): Observable<User> {
+    return this.http.post<User>(USER_REGISTER_URL, userRegister).pipe(
       tap({
-        next:(user)=>{
+        next: (user) => {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
@@ -48,7 +51,7 @@ export class UserService {
             'Register Successful'
           )
         },
-        error:(errorResponse)=>{
+        error: (errorResponse) => {
           this.toastrService.error(errorResponse.error,
             'Register Failed'
           )

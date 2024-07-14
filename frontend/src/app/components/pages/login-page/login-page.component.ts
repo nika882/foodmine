@@ -14,19 +14,21 @@ export class LoginPageComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,
     private userService:UserService,
   private activeRouter:ActivatedRoute,
-  private router:Router) {
+  private router:Router) {}
+    
+   
+
+  ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
       email:['',[Validators.required,Validators.email]],
       password:['',Validators.required]
     });
-    //queryParams ეს ფუნქცია ამოწმებს კითხვის ნიშნის შემდეგ ყველა გვერდს
     this.returnUrl=this.activeRouter.snapshot.queryParams.returnUrl;
-   }
-
-  ngOnInit(): void {
   }
   
-  get fc(){return this.loginForm.controls}
+  get fc(){
+    return this.loginForm.controls
+  }
   submit(){
     this.isSubmited=true;
     if(this.loginForm.invalid)return;
