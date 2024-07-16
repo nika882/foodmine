@@ -9,10 +9,11 @@ const router = Router();
 router.use(auth);
 
 router.post('/create',
+    
 asyncHandler(async (req:any, res:any) => {
     const requestOrder = req.body;
-
-    if(requestOrder.items.length <= 0){
+    console.log(requestOrder, ' req order here ')
+    if(requestOrder.item.length <= 0){
         res.status(HTTP_BAD_REQUEST).send('Cart Is Empty!');
         return;
     }

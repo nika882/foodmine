@@ -105,3 +105,11 @@ li .remove-button:hover{
     opacity: 1;
     cursor: pointer;
 }
+
+.proceed {
+    background-color: #EC5454;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+}
